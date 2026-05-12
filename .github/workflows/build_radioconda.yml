@@ -34,7 +34,10 @@ jobs:
       - name: Install coreutils for macOS
         if: runner.os == 'macOS'
         run: brew install coreutils
-
+      - name: Clean micromamba cache
+        shell: bash
+        run: |
+         micromamba clean --all --yes || true
       - name: Install python environment
         uses: mamba-org/setup-micromamba@v2
         with:
