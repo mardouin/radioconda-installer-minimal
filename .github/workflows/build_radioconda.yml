@@ -35,9 +35,11 @@ jobs:
         if: runner.os == 'macOS'
         run: brew install coreutils
       - name: Clean micromamba cache
-        shell: bash
-        run: |
-         micromamba clean --all --yes || true
+        uses: mamba-org/setup-micromamba@v2
+        with :
+         shell: bash
+         run: |
+          micromamba clean --all --yes || true
       - name: Install python environment
         uses: mamba-org/setup-micromamba@v2
         with:
@@ -46,7 +48,6 @@ jobs:
           init-shell: bash
           extra-specs: "conda"
           cache-environment: false
-
       - name: Build installer
         shell: bash -l {0}
         env:
