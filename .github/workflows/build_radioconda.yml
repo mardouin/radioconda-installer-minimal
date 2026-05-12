@@ -40,6 +40,8 @@ jobs:
         with:
           environment-file: installer_specs/buildenv.conda-lock.yml
           environment-name: buildenv
+          init-shell: bash
+          cache-environment: true
 
       - name: Build installer
         shell: bash -l {0}
