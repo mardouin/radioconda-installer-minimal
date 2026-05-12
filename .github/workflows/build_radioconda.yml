@@ -48,6 +48,7 @@ jobs:
           init-shell: bash
           extra-specs: "conda"
           cache-environment: false
+          create-args: "--no-channel-priority"
       - name: Build installer
         shell: bash -l {0}
         env:
