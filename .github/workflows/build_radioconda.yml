@@ -45,6 +45,7 @@ jobs:
           environment-name: buildenv
           init-shell: bash
           extra-specs: "conda"
+          cache-environment: false
 
       - name: Build installer
         shell: bash -l {0}
