@@ -41,7 +41,7 @@ jobs:
           environment-file: installer_specs/buildenv.conda-lock.yml
           environment-name: buildenv
           init-shell: bash
-          create-args: "--solver=classic"
+          extra-specs: "conda"
 
       - name: Build installer
         shell: bash -l {0}
