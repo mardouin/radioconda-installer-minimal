@@ -1,4 +1,4 @@
-name: Build radioconda
+name: Build radioconda Windows
 on:
   push:
     paths:
@@ -21,31 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: ubuntu-latest
-            PLATFORM: linux-64
-            OS_NAME: Linux
-            ARCH: x86_64
-          - os: ubuntu-latest
-            PLATFORM: linux-aarch64
-            OS_NAME: Linux
-            ARCH: aarch64
-            EMU_ARCH: aarch64
-            EMU_DISTRO: ubuntu_latest
-          - os: ubuntu-latest
-            PLATFORM: linux-ppc64le
-            OS_NAME: Linux
-            ARCH: ppc64le
-            EMU_ARCH: ppc64le
-            EMU_DISTRO: ubuntu_latest
-          - os: macos-13
-            PLATFORM: osx-64
-            OS_NAME: MacOSX
-            ARCH: x86_64
-          - os: macos-latest
-            PLATFORM: osx-arm64
-            OS_NAME: MacOSX
-            ARCH: arm64
+        include:          
           - os: windows-latest
             PLATFORM: win-64
             OS_NAME: Windows
