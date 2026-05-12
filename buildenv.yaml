@@ -6,6 +6,6 @@ platforms:
 dependencies:
   - anaconda-client
   - conda-build
-  - constructor
+  - constructor=3.4
   - patch-ng
   - requests
